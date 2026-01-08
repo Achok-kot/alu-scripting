@@ -1,0 +1,2 @@
+#!/usr/bin/env ruby
+(LN|K|D)* ( [MBERS]*)\1 (ENG|INE|E|R)* [LINKED]*IN R+D [^WORK]*ING? .* [IN].* C {0}N [NECT]*
