@@ -1,1 +1,1 @@
-hello
+#!/usr/bin/env ruby
