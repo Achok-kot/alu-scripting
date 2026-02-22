@@ -3,11 +3,13 @@
 import requests
 
 
-def recurse(subreddit, hot_list=[], after=None):
+def recurse(subreddit, hot_list=None, after=None):
     """Recursively returns a list of titles of all hot articles"""
+    if hot_list is None:
+        hot_list = []
     url = f"https://www.reddit.com/r/{subreddit}/hot.json"
     headers = {"User-Agent": "python:subreddit.recurse:v1.0"}
-    params = {"after": after} if after else {}
+    params = {"after": after, "limit": 100} if after else {"limit": 100}
     response = requests.get(url, headers=headers, params=params,
                             allow_redirects=False)
     if response.status_code == 200:
